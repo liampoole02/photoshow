@@ -17,7 +17,12 @@ Route::get('/', 'App\Http\Controllers\AlbumsController@index');
 Route::get('/albums', 'App\Http\Controllers\AlbumsController@index')->name('album-index');
 Route::get('/albums/create', 'App\Http\Controllers\AlbumsController@create')->name('album-create');
 Route::post('/albums/store', 'App\Http\Controllers\AlbumsController@store')->name('album-store');
+Route::get('albums/{id}', 'App\Http\Controllers\AlbumsController@show')->name('album-show');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/photos/create/{albumId}', 'App\Http\Controllers\PhotosController@create')->name('photo-create');
+Route::post('/photos/store', 'App\Http\Controllers\PhotosController@store')->name('photo-store');
+Route::get('/photos/{id}', 'PhotosController@show')->name('photo-show');
