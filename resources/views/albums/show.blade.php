@@ -7,7 +7,7 @@
         <p class="lead text-muted">{{ $album->description }}</p>
         <p>
             <a href="{{ route('photo-create', $album->id) }}" class="btn btn-primary my-2">Upload photo</a>
-            <a href="#" class="btn btn-secondary my-2">back</a>
+            <a href="{{ route('album-index')}}" class="btn btn-secondary my-2">back</a>
         </p>
     </div>
 </section>
